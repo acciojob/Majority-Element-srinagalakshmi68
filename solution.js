@@ -1,14 +1,11 @@
 // arr = array of numbers
 function major(arr) {
     //your code here
-    arr.sort((a, b) => a - b);
+    let seen = {}
 
-    const l = arr.length;
-
-    if (l % 2 === 0) {
-        return arr[l / 2]
-    } else {
-        return arr[(l - 1) / 2]
+    for (let i = 0; i < arr.length; i++) {
+        seen[arr[i]] = (seen[arr[i]] || 0) + 1
+        if (seen[arr[i]] >= arr.length / 2) return arr[i]
     }
 }
 module.exports = major;
