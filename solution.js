@@ -6,7 +6,7 @@ function major(arr) {
     for (let i = 0; i < arr.length; i++) {
         if (map.has(arr[i])) {
             let count = map.get(arr[i]) + 1;
-            if (count > arr.length / 2) {
+            if (count > floor(arr.length / 2)) {
                 document.write("Majority found :- " + arr[i]);
                 return;
             } else
